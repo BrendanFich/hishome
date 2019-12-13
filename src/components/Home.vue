@@ -2,39 +2,29 @@
   <div class="home">
     <div class="webBg"></div>
     <div class="navBar">
-      <div class="item1 item" @click="linkTo">
-        <div class="icon">
-          <img class="img1" src="./img/01.png" alt="">
-          <img class="hoverimg1" src="./img/01-hover.png" alt="">
-        </div>
+      <div class="item1 item" @click="linkTo('http://192.168.100.7/AppUpdate')">
+        <img class="img1" src="./img/01.png" alt="">
+        <img class="hoverimg1" src="./img/01-hover.png" alt="">
         <div class="name">总院HIS</div>
       </div>
-      <div class="item2 item" @click="linkTo">
-        <div class="icon">
-          <img class="img2" src="./img/02.png" alt="">
-          <img class="hoverimg2" src="./img/02-hover.png" alt="">
-        </div>
+      <div class="item2 item" @click="linkTo('http://192.168.103.22/AppUpdate')">
+        <img class="img2" src="./img/02.png" alt="">
+        <img class="hoverimg2" src="./img/02-hover.png" alt="">
         <div class="name">旧院HIS</div>
       </div>
-      <div class="item3 item" @click="linkTo">
-        <div class="icon">
-          <img class="img3" src="./img/03.png" alt="">
-          <img class="hoverimg3" src="./img/03-hover.png" alt="">
-        </div>
+      <div class="item3 item" @click="linkTo('http://192.168.102.9/AppUpdate')">
+        <img class="img3" src="./img/03.png" alt="">
+        <img class="hoverimg3" src="./img/03-hover.png" alt="">
         <div class="name">护理院养老</div>
       </div>
-      <div class="item4 item" @click="linkTo">
-        <div class="icon">
-          <img class="img4" src="./img/04.png" alt="">
-          <img class="hoverimg4" src="./img/04-hover.png" alt="">
-        </div>
+      <div class="item4 item" @click="linkTo('http://192.168.200.253/AppUpdate')">
+        <img class="img4" src="./img/04.png" alt="">
+        <img class="hoverimg4" src="./img/04-hover.png" alt="">
         <div class="name">护理院医保</div>
       </div>
-      <div class="item5 item" @click="linkTo">
-        <div class="icon">
-          <img class="img5" src="./img/05.png" alt="">
-          <img class="hoverimg5" src="./img/05-hover.png" alt="">
-        </div>
+      <div class="item5 item" @click="linkTo('http://192.168.200.253/AppUpdate')">
+        <img class="img5" src="./img/05.png" alt="">
+        <img class="hoverimg5" src="./img/05-hover.png" alt="">
         <div class="name">三水健翔</div>
       </div>
     </div>
@@ -49,11 +39,10 @@ export default {
     }
   },
   methods: {
-    linkTo () {
-      window.location.href = 'http://www.baidu.com'
+    linkTo (url) {
+      return url
     }
   }
-
 }
 </script>
 
@@ -78,7 +67,24 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
+.item {
+  margin: 1vh 2vw;
+  width: 12vw;
+  height: 30vh;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+img {
+  width: 12vw;
+}
+.name {
+  margin-top: 1vh;
+  text-align: center;
+  font-size: 1.8vw;
+  font-weight: bold;
+  color: #1eb0a8;
+}
 .hoverimg1,.hoverimg2,.hoverimg3,.hoverimg4,.hoverimg5 {
   display: none;
 }
@@ -91,7 +97,7 @@ export default {
 .item2:hover .img2 {
   display: none;
 }
-.item:hover .hoverimg2 {
+.item2:hover .hoverimg2 {
   display: block;
 }
 .item3:hover .img3 {
@@ -111,20 +117,5 @@ export default {
 }
 .item5:hover .hoverimg5 {
   display: block;
-}
-.item {
-  margin: 1vh 2vw;
-  display: inline-block;
-  width: 12vw;
-  cursor: pointer;
-}
-img {
-  width: 12vw;
-}
-.name {
-  text-align: center;
-  font-size: 1.8vw;
-  font-weight: bold;
-  color: #1eb0a8;
 }
 </style>
